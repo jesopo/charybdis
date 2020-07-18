@@ -594,6 +594,9 @@ register_local_user(struct Client *client_p, struct Client *source_p)
 
 	source_p->umodes |= ConfigFileEntry.default_umodes & ~ConfigFileEntry.oper_only_umodes & ~orphaned_umodes;
 
+	if(IsConfSecure(source_p))
+		SetSSL(source_p)
+
 	call_hook(h_new_local_user, source_p);
 
 	/* If they have died in send_* or were thrown out by the

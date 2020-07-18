@@ -98,6 +98,7 @@ struct ConfItem
 #define CONF_FLAGS_NEED_IDENTD		0x00000008
 #define CONF_FLAGS_EXEMPTKLINE		0x00000040
 #define CONF_FLAGS_NOLIMIT		0x00000080
+#define CONF_FLAGS_SECURE		0x00000100
 #define CONF_FLAGS_SPOOF_IP		0x00000200
 #define CONF_FLAGS_SPOOF_NOTICE		0x00000400
 #define CONF_FLAGS_REDIR		0x00000800
@@ -127,6 +128,7 @@ struct ConfItem
 #define IsConfExemptShide(x)	((x)->flags & CONF_FLAGS_EXEMPTSHIDE)
 #define IsConfExemptJupe(x)	((x)->flags & CONF_FLAGS_EXEMPTJUPE)
 #define IsConfExemptResv(x)	((x)->flags & CONF_FLAGS_EXEMPTRESV)
+#define IsConfSecure(x)		((x)->flags & CONF_FLAGS_SECURE)
 #define IsConfDoSpoofIp(x)      ((x)->flags & CONF_FLAGS_SPOOF_IP)
 #define IsConfSpoofNotice(x)    ((x)->flags & CONF_FLAGS_SPOOF_NOTICE)
 #define IsConfEncrypted(x)      ((x)->flags & CONF_FLAGS_ENCRYPTED)
